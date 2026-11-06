@@ -193,6 +193,13 @@ body.scrolled .content-lower a {
   transition: color 0.5s ease;
 }
 
+.content-lower h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .content-lower h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
