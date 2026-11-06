@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maidstone Chess Club - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maidstone Chess Club - Maidstone Chess Club</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <h1>Maidstone Chess Club</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="club-events.html">Club Events</a></li>
-                    <li><a href="kent-tables.html">Kent Tables</a></li>
-                    <li><a href="links.html">Links</a></li>
-                </ul>
-            </nav>
+
+  <!-- Background Video -->
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="https://video.wixstatic.com/video/11062b_69a113fb615749bcbbd3609b924df18c/1080p/mp4/file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="news.html">NEWS</a></li>
+      <li><a href="links.html">LINKS</a></li>
+      <li class="nav-logo-item">
+        <a href="index.html">
+          <img src="https://static.wixstatic.com/media/add40a_8337e0e7e11342f2a3f28ad87f1f89f7~mv2.png/v1/fill/w_248,h_232,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcc-logo.png" alt="Maidstone Chess Club Logo" class="nav-logo">
+        </a>
+      </li>
+      <li><a href="history.html">HISTORY</a></li>
+      <li><a href="books.html">BOOKS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="content-hero">
+    <h1>Maidstone Chess Club</h1>
+    <p>Maidstone Chess Club</p>
+  </div>
+
+  <!-- Lower Content Area with 12-Column Responsive Grid -->
+  <div class="content-lower">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          
+    <h2>About Our Club</h2>
+    <p>Our recent successes include:</p>
+    <ul>
+      <li><strong>2013:</strong> Maidstone I won the County Cup (for the sixteenth time) &amp; Maidstone V won the Harvey Cup (for the fourth time)</li>
+      <li><strong>2018:</strong> Maidstone VIII won the Intro Cup (for the first time)</li>
+      <li><strong>2023:</strong> Maidstone IV won the Harvey Cup (for the sixth time)</li>
+      <li><strong>2024:</strong> Maidstone V won the Tom Fuller Cup (for the fifth time)</li>
+      <li><strong>2025:</strong> Maidstone IV won the En Passant Cup (for the third time)</li>
+    </ul>
+    <p>We meet on Wednesday evenings from 19:30hrs at St Faiths Centre, Moncktons Lane, Maidstone, ME14 2PY. Every week you can meet opponents for serious games and/or quick, casual games.</p>
+    <p>There are club competitions, at both normal and rapid play, running throughout the year. You can join one of the teams (we have teams in 7 of the 8 Kent league divisions (County Cup, Lewis Cup, Stevenson Cup, En Passant Cup, Harvey Cup, Tom Fuller Cup &amp; Intro Cup) and in national events, get advice on how to improve your game, or simply kibitz and chat! Juniors are very welcome.</p>
+    <p>For more information ring Bob Lane on <strong>01795 842331</strong> or David Heath on <strong>01622 741758</strong> or email David Heath at <a href="mailto:davidheath11@talktalk.net">davidheath11@talktalk.net</a> or simply come along on any Wednesday evening.</p>
+
         </div>
-    </header>
+      </div>
+    </div>
+  </div>
 
-    <main class="container">
-        <section class="hero">
-            <h2>Welcome to Maidstone Chess Club</h2>
-            <p class="lead">Do come and play at one of the most active and generally successful chess clubs in Kent. We have won every cup from the County Cup down to the Intro Cup!</p>
-        </section>
+  <script>
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+  </script>
 
-        <section class="info-grid">
-            <div class="card">
-                <h3>Meeting Details</h3>
-                <p><strong>When:</strong> Wednesday evenings from 19:30 hrs</p>
-                <p><strong>Where:</strong> St Faiths Centre, Moncktons Lane, Maidstone, ME14 2PY</p>
-                <p>Every week you can meet opponents for serious games and/or quick, casual games. Juniors are very welcome.</p>
-            </div>
-            <div class="card">
-                <h3>Recent Club Successes</h3>
-                <ul>
-                    <li><strong>2013:</strong> Maidstone I won the County Cup (16th time) & Maidstone V won the Harvey Cup</li>
-                    <li><strong>2018:</strong> Maidstone VIII won the Intro Cup</li>
-                    <li><strong>2023:</strong> Maidstone IV won the Harvey Cup (6th time)</li>
-                    <li><strong>2024:</strong> Maidstone V won the Tom Fuller Cup (5th time)</li>
-                    <li><strong>2025:</strong> Maidstone IV won the En Passant Cup (3rd time)</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="card contact-card">
-            <h3>Get in Touch</h3>
-            <p>For more information, feel free to contact us or simply come along on any Wednesday evening:</p>
-            <ul>
-                <li><strong>Bob Lane:</strong> 01795 842331</li>
-                <li><strong>David Heath:</strong> 01622 741758 | Email: <a href="mailto:davidheath11@talktalk.net">davidheath11@talktalk.net</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2022-2026 Maidstone Chess Club.</p>
-        </div>
-    </footer>
 </body>
 </html>

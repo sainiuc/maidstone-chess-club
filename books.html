@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maidstone Chess Club - Books</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="https://video.wixstatic.com/video/11062b_69a113fb615749bcbbd3609b924df18c/1080p/mp4/file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="news.html">NEWS</a></li>
+      <li><a href="links.html">LINKS</a></li>
+      <li class="nav-logo-item">
+        <a href="index.html">
+          <img src="https://static.wixstatic.com/media/add40a_8337e0e7e11342f2a3f28ad87f1f89f7~mv2.png/v1/fill/w_248,h_232,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcc-logo.png" alt="Maidstone Chess Club Logo" class="nav-logo">
+        </a>
+      </li>
+      <li><a href="history.html">HISTORY</a></li>
+      <li><a href="books.html">BOOKS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="content-hero">
+    <h1>Books</h1>
+    <p>Maidstone Chess Club</p>
+  </div>
+
+  <!-- Lower Content Area with 12-Column Responsive Grid -->
+  <div class="content-lower">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>Explore our club library collection of chess books, opening guides, and endgame studies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

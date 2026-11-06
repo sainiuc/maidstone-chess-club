@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Background Video Styles */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Dark Overlay for Text Readability */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* When scrolled, hide video and overlay */
+body.scrolled .video-background,
+body.scrolled .overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Make text dark when scrolled to white background */
+body.scrolled .content-lower,
+body.scrolled .content-lower h2,
+body.scrolled .content-lower h3,
+body.scrolled .content-lower p,
+body.scrolled .content-lower li,
+body.scrolled .content-lower a {
+  color: #333333;
+}
+
+/* Top Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00bcd4;
+}
+
+/* Logo inside navigation menu */
+.nav-logo-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 55px;
+  width: auto;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Hero Content Wrapper (First Screen) */
+.content-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.content-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.content-hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* 12-Column Responsive Grid Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+/* Default 12 columns grid system */
+.col-1  { width: 8.333%;  padding: 0 15px; }
+.col-2  { width: 16.666%; padding: 0 15px; }
+.col-3  { width: 25%;     padding: 0 15px; }
+.col-4  { width: 33.333%; padding: 0 15px; }
+.col-5  { width: 41.666%; padding: 0 15px; }
+.col-6  { width: 50%;     padding: 0 15px; }
+.col-7  { width: 58.333%; padding: 0 15px; }
+.col-8  { width: 66.666%; padding: 0 15px; }
+.col-9  { width: 75%;     padding: 0 15px; }
+.col-10 { width: 83.333%; padding: 0 15px; }
+.col-11 { width: 91.666%; padding: 0 15px; }
+.col-12 { width: 100%;    padding: 0 15px; }
+
+/* Mobile/Tablet Adjustments */
+@media (max-width: 768px) {
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .navbar ul {
+    gap: 1rem;
+  }
+}
+
+/* Lower Content Container */
+.content-lower {
+  position: relative;
+  z-index: 1;
+  padding: 100px 0 60px 0;
+  color: #ffffff;
+  transition: color 0.5s ease;
+}
+
+.content-lower h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.content-lower h3 {
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.content-lower p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.content-lower ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.content-lower li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
