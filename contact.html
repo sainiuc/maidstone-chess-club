@@ -35,7 +35,7 @@
 
   <!-- Hero Content -->
   <div class="content-hero">
-    <h1>Contact Us</h1>
+    <h1>Contact</h1>
     <p>Maidstone Chess Club</p>
   </div>
 
@@ -43,8 +43,186 @@
   <div class="content-lower">
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12" align="center">
           <p>Get in touch with Maidstone Chess Club, find our meeting venue, or send us an inquiry.</p>
+		  
+		  
+		    <!-- 1. Load EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // REPLACE WITH YOUR ACTUAL PUBLIC KEY FROM EMAILJS
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
+
+
+<style>
+
+    .contact-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 8px;
+      color: #333333;
+    }
+
+    .contact-card p {
+      margin-bottom: 24px;
+      color: #666666;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444444;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0052a3;
+    }
+
+    button[type="submit"]:disabled {
+      background-color: #999999;
+      cursor: not-allowed;
+    }
+
+    .status-message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      display: none;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .status-message.success {
+      display: block;
+      background-color: #e6f4ea;
+      color: #137333;
+      border: 1px solid #ceead6;
+    }
+
+    .status-message.error {
+      display: block;
+      background-color: #fce8e6;
+      color: #c5221f;
+      border: 1px solid #fad2cf;
+    }
+  </style>
+
+
+		    <div class="contact-card">
+    <h2>Get in Touch</h2>
+    <p>Send us a message and we'll reply as soon as possible.</p>
+
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="user_name">Name</label>
+        <input type="text" id="user_name" name="user_name" required placeholder="Jane Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="user_email">Email</label>
+        <input type="email" id="user_email" name="user_email" required placeholder="jane@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">Send Message</button>
+    </form>
+
+    <div id="status-msg" class="status-message"></div>
+  </div>
+
+  <script>
+    // 2. JavaScript to handle form submission via EmailJS
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusMsg = document.getElementById('status-msg');
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // UI state during sending
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusMsg.className = 'status-message';
+      statusMsg.textContent = '';
+
+      // REPLACE WITH YOUR SERVICE ID AND TEMPLATE ID FROM EMAILJS
+      const serviceID = 'YOUR_SERVICE_ID';
+      const templateID = 'YOUR_TEMPLATE_ID';
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          statusMsg.textContent = 'Message sent successfully!';
+          statusMsg.classList.add('success');
+          contactForm.reset();
+        }, (error) => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          statusMsg.textContent = 'Failed to send message. Please try again later.';
+          statusMsg.classList.add('error');
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+
+
+
         </div>
       </div>
     </div>
@@ -52,7 +230,7 @@
 
   <script>
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 600) {
         document.body.classList.add('scrolled');
       } else {
         document.body.classList.remove('scrolled');
