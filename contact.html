@@ -17,8 +17,17 @@
   <div class="overlay"></div>
 
   <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar -->
   <nav class="navbar">
-    <ul>
+    <a href="index.html" class="mobile-nav-logo">
+      <img src="img/mcc-logo.png" alt="Maidstone Chess Club Logo">
+    </a>
+    <button class="nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html">HOME</a></li>
       <li><a href="news.html">NEWS</a></li>
       <li><a href="links.html">LINKS</a></li>
@@ -184,50 +193,17 @@
     <div id="status-msg" class="status-message"></div>
   </div>
 
-  <script>
-    // 2. JavaScript to handle form submission via EmailJS
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const statusMsg = document.getElementById('status-msg');
+    <script>
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
 
-      // UI state during sending
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      statusMsg.className = 'status-message';
-      statusMsg.textContent = '';
-
-      // REPLACE WITH YOUR SERVICE ID AND TEMPLATE ID FROM EMAILJS
-      const serviceID = 'YOUR_SERVICE_ID';
-      const templateID = 'YOUR_TEMPLATE_ID';
-
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-          statusMsg.textContent = 'Message sent successfully!';
-          statusMsg.classList.add('success');
-          contactForm.reset();
-        }, (error) => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-          statusMsg.textContent = 'Failed to send message. Please try again later.';
-          statusMsg.classList.add('error');
-          console.error('EmailJS Error:', error);
-        });
-    });
-  </script>
-
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
     window.addEventListener('scroll', function() {
       if (window.scrollY > 600) {
         document.body.classList.add('scrolled');

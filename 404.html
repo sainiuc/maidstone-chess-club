@@ -17,8 +17,17 @@
   <div class="overlay"></div>
 
   <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar -->
   <nav class="navbar">
-    <ul>
+    <a href="index.html" class="mobile-nav-logo">
+      <img src="img/mcc-logo.png" alt="Maidstone Chess Club Logo">
+    </a>
+    <button class="nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html">HOME</a></li>
       <li><a href="news.html">NEWS</a></li>
       <li><a href="links.html">LINKS</a></li>
@@ -61,7 +70,17 @@
     </div>
   </div>
 
-  <script>
+    <script>
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+
     window.addEventListener('scroll', function() {
       if (window.scrollY > 600) {
         document.body.classList.add('scrolled');
